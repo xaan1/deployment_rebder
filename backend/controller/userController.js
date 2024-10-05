@@ -103,7 +103,7 @@ export const login = async (req, res) => {
         const token = jwt.sign(
             { id: existingUser._id  }, 
             "test", 
-            { expiresIn: "10h" }
+            { expiresIn: "1hr" }
           );
 
 
@@ -133,19 +133,7 @@ export const login = async (req, res) => {
 
 
 
-export const tijaaabo = async(req, res) => {
-    res.send("tijaabo")
-
-    // res.send(req.user)
-
-    console.log(req.user)
-}
-
-
-
 // getProfile
-
-
 
 export const getProfile = async(req, res) => {
 
@@ -183,8 +171,12 @@ export const logout = async(req, res) => {
     
         try {
     
-            res.clearCookie("token");
-            res.send("logged out");
+                    // Tirtir token cookie-ga
+                    res.clearCookie("token", { httpOnly: true, secure: true, sameSite: "strict" }); // Sidoo kale waxaad ku dari kartaa options amniga oo dheeraad ah
+                    res.status(200).json({ message: "Logged out successfully" }); // U dir jawaab sax ah iyo farriin cad
+                    
+        
+            
     
         }catch(err){
     

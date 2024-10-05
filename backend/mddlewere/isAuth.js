@@ -16,7 +16,7 @@ export const isAuthenticate =(req ,res ,next) => {
 
         if (!token) return res.status(403).send({ status: false, message: "access denied, no Token Provided please login first" });
 
-        console.log(token ,"token")
+        // console.log(token ,"token")
        
 
 

@@ -12,7 +12,7 @@ import { createContext, useContext, useState } from 'react';
 
 
 
-    const [user , setUser]  =  useState()
+    const [user , setUser]  =  useState(null)
  
 
 

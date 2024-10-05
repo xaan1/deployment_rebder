@@ -17,7 +17,7 @@ const Header = () => {
   const handlelogout = async() => {
 
       try {
-        const data  = await axios.post("http://localhost:8000/api/users/logout");
+        const data  = await axios.post("http://localhost:8000/api/users/logout" ,{ withCredentials: true });
         // toast.success(data);
         console.log(data)
         setUser(null);

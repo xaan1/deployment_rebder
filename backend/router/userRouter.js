@@ -1,6 +1,6 @@
 
 import express from "express";
-import { getProfile, login, logout, makeAsAdmin, Register, tijaaabo } from "../controller/userController.js";
+import { getProfile, login, logout, makeAsAdmin, Register } from "../controller/userController.js";
 import { isAdmin, isAuthenticate } from "../mddlewere/isAuth.js";
 
 
@@ -16,7 +16,6 @@ router.post("/register",  Register)
 
 router.post("/login",  login)
 
-router.post("/tijaabo", isAuthenticate,  isAdmin , tijaaabo)
 
 router.get("/profile" , isAuthenticate , getProfile)
 

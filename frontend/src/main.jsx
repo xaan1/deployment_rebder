@@ -37,7 +37,7 @@ const routerProvider = createBrowserRouter([
 		
 			{
 				path: "/newPost",
-				element: <NewPost />,
+				element:   <NewPost />,
 			},
 			{
 				path: "/updated_post/:id",

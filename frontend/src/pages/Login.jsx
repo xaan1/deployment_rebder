@@ -23,14 +23,7 @@ const Login = () => {
 
   console.log(user)
 
-  useEffect(() => {
 
-    if(user){
-      navigate('/newPost')
-    }
-
-
-  },[user])
 
 
 
